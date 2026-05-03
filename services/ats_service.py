@@ -12,6 +12,8 @@ from models.schemas import ATSResult
 from utils.file_handler import read_bytes
 from utils.text_cleaner import clean_text
 
+PERFECT_SCORE = 1.0
+
 
 class ATSService:
     """Main service for ATS resume analysis."""
@@ -136,7 +138,7 @@ class ATSService:
             suggestions.append(
                 "Increase keyword usage throughout your CV to improve keyword density."
             )
-        if formatting_score < 1:
+        if formatting_score < PERFECT_SCORE:
             suggestions.append(
                 "Use clear headings and bullet points for readability."
             )
