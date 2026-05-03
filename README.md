@@ -12,19 +12,19 @@ ATS-Resume-Optimizer est une application Streamlit qui compare un CV avec une de
 - Générer un CV optimisé en ajoutant des mots-clés pertinents
 
 ## Prérequis
-- Python 3.9+
-- pip
+- ''Python 3.9+''
+- ''pip''
 
 ## Installation
 1. (Optionnel) Créer un environnement virtuel :
-   - `python -m venv .venv`
-   - `source .venv/bin/activate` (Linux/macOS) ou `./.venv/Scripts/activate` (Windows)
+```python -m venv .venv```
+```source .venv/bin/activate``` (Linux/macOS) ou ```./.venv/Scripts/activate``` (Windows)
 2. Installer les dépendances :
-   - `pip install -r requirements.txt`
+```pip install -r requirements.txt```
 
 ## Lancer l’application
-- `streamlit run app.py`
+```streamlit run app.py```
 - Ouvrir l’URL affichée par Streamlit dans votre navigateur.
 
 ## Tester le projet
-- `python -m unittest discover -s tests`
+```python -m unittest discover -s tests```
