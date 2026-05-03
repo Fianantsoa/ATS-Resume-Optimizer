@@ -1,7 +1,7 @@
 # ATS-Resume-Optimizer
 
 ## Description du projet
-ATS-Resume-Optimizer est une application Streamlit qui compare un CV avec une description de poste pour évaluer l’alignement ATS (Applicant Tracking System). Elle calcule un score, met en évidence les mots-clés manquants, propose des suggestions d’amélioration et génère une version optimisée du CV.
+ATS-Resume-Optimizer est une application Streamlit qui compare un CV avec une description de poste pour évaluer l’alignement ATS (Applicant Tracking System). Elle calcule un score et met en évidence les mots-clés manquants. Elle propose aussi des suggestions d’amélioration et génère une version optimisée du CV.
 
 ## Fonctionnalités
 - Importer un CV en PDF ou TXT
