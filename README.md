@@ -12,7 +12,7 @@ ATS-Resume-Optimizer est une application Streamlit qui compare un CV avec une de
 - Générer un CV optimisé en ajoutant des mots-clés pertinents
 
 ## Prérequis
-- Python 3.x
+- Python 3.9+
 - pip
 
 ## Installation
