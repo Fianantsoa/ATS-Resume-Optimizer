@@ -9,6 +9,7 @@ class ATSConfig:
     max_keywords: int = 60
     max_injected_keywords: int = 15
     keyword_density_target: float = 0.03
+    density_score_warning_threshold: float = 0.7
     formatting_min_word_count: int = 150
     section_heading_min_length: int = 3
     section_heading_max_length: int = 40

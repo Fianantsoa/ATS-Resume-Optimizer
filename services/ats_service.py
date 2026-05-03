@@ -134,7 +134,7 @@ class ATSService:
                 + ", ".join(sorted(missing_sections))
                 + "."
             )
-        if density_score < 0.7:
+        if density_score < self.config.density_score_warning_threshold:
             suggestions.append(
                 "Increase keyword usage throughout your CV to improve keyword density."
             )
