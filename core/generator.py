@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+
 from config import DEFAULT_CONFIG
 from core.optimizer import optimize_cv
 
@@ -31,6 +33,4 @@ def _is_section_heading(line: str) -> bool:
 
 def _collapse_blank_lines(lines: list[str]) -> str:
     text = "\n".join(lines).strip()
-    while "\n\n\n" in text:
-        text = text.replace("\n\n\n", "\n\n")
-    return text
+    return re.sub(r"\n{3,}", "\n\n", text)

@@ -48,8 +48,11 @@ if optimize_clicked:
                 st.session_state["results"] = results
             except FileHandlingError as exc:
                 st.error(str(exc))
-            except Exception as exc:  # noqa: BLE001
-                st.error(f"Unable to process the resume: {exc}")
+            except Exception:  # noqa: BLE001
+                st.error(
+                    "An error occurred while processing your resume. "
+                    "Please ensure the file is valid and try again."
+                )
 
 results = st.session_state.get("results")
 if results:

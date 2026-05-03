@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+
 from config import DEFAULT_CONFIG
 
 
@@ -51,6 +53,5 @@ def _insert_into_skills_section(lines: list[str], insertion: str) -> list[str]:
 
 def _finalize_text(lines: list[str]) -> str:
     text = "\n".join(lines)
-    while "\n\n\n" in text:
-        text = text.replace("\n\n\n", "\n\n")
+    text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()

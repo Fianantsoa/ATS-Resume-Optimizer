@@ -8,7 +8,7 @@ from services.ats_service import ATSService  # noqa: E402
 
 
 class TestScoring(unittest.TestCase):
-    def test_full_score_with_complete_resume(self) -> None:
+    def test_perfect_score_when_all_requirements_met(self) -> None:
         service = ATSService()
         job_description = "Python SQL AWS"
         filler = " ".join(["python sql aws"] * 60)
