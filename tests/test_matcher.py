@@ -1,6 +1,10 @@
+import sys
 import unittest
+from pathlib import Path
 
-from core.matcher import match_keywords
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from core.matcher import match_keywords  # noqa: E402
 
 
 class TestMatcher(unittest.TestCase):

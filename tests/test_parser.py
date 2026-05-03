@@ -1,8 +1,12 @@
+import sys
 import unittest
+from pathlib import Path
 
 import fitz
 
-from core.parser import parse_cv
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from core.parser import parse_cv  # noqa: E402
 
 
 class TestParser(unittest.TestCase):

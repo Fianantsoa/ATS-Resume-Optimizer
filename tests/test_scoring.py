@@ -1,18 +1,38 @@
+import sys
 import unittest
+from pathlib import Path
 
-from services.ats_service import ATSService
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from services.ats_service import ATSService  # noqa: E402
 
 
 class TestScoring(unittest.TestCase):
-    def test_total_score_full_match(self) -> None:
+    def test_full_score_with_complete_resume(self) -> None:
         service = ATSService()
-        score = service._compute_total_score(1.0, 1.0, 1.0, 1.0)
-        self.assertEqual(score, 100)
+        job_description = "Python SQL AWS"
+        filler = " ".join(["python sql aws"] * 60)
+        cv_text = "\n".join(
+            [
+                "Skills",
+                f"- {filler}",
+                "Experience",
+                f"- {filler}",
+                "Education",
+                f"- {filler}",
+            ]
+        )
 
-    def test_total_score_zero_match(self) -> None:
+        result = service.analyze_text(cv_text, job_description)
+        self.assertEqual(result.score, 100)
+
+    def test_score_drops_when_sections_missing(self) -> None:
         service = ATSService()
-        score = service._compute_total_score(0.0, 0.0, 0.0, 0.0)
-        self.assertEqual(score, 0)
+        job_description = "Python SQL AWS"
+        cv_text = "python sql aws " * 60
+
+        result = service.analyze_text(cv_text, job_description)
+        self.assertLess(result.score, 100)
 
 
 if __name__ == "__main__":
